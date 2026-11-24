@@ -1,0 +1,321 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;600;700&family=Playfair+Display:wght@700&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: #f5f7f2;
+    color: #20372b;
+    font-family: 'DM Sans', Arial;
+    display: flex;
+}
+
+/* SIDEBAR */
+aside {
+    width: 230px;
+    background: #214b3a;
+    color: white;
+    padding: 25px 18px;
+    position: fixed;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+aside h2 {
+    margin: 0;
+}
+
+aside p {
+    color: #c8dbcd;
+    margin: 4px 0 25px;
+}
+
+nav {
+    display: grid;
+    gap: 9px;
+}
+
+nav a {
+    color: #e1ece4;
+    text-decoration: none;
+    padding: 12px;
+    border-radius: 8px;
+}
+
+nav a:hover {
+    background: #ffffff20;
+}
+
+aside small {
+    margin-top: auto;
+    color: #bdd1c2;
+    line-height: 1.7;
+}
+
+/* MAIN CONTENT */
+main {
+    margin-left: 230px;
+    width: calc(100% - 230px);
+    padding: 30px 4%;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+header small {
+    letter-spacing: 2px;
+    color: #548064;
+    font-weight: bold;
+}
+
+h1 {
+    font: 700 29px 'Playfair Display';
+    margin: 8px 0;
+}
+
+h2 {
+    font: 700 24px 'Playfair Display';
+}
+
+section {
+    padding: 15px 0 30px;
+    scroll-margin: 20px;
+}
+
+/* DASHBOARD */
+.stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+}
+
+.stats article,
+.panel,
+.card {
+    background: white;
+    border: 1px solid #e2e9e1;
+    border-radius: 13px;
+    padding: 18px;
+}
+
+.stats b {
+    display: block;
+    font-size: 27px;
+    color: #2e6a4e;
+    margin-top: 12px;
+}
+
+/* INPUTS */
+.tools {
+    display: flex;
+    gap: 10px;
+    margin: 15px 0;
+}
+
+.tools input {
+    flex: 1;
+}
+
+input,
+select {
+    padding: 12px;
+    border: 1px solid #dce4dc;
+    border-radius: 8px;
+    font: inherit;
+    min-width: 0;
+    background: white;
+}
+
+/* BUTTONS */
+button {
+    padding: 12px 16px;
+    border: 0;
+    border-radius: 8px;
+    background: #214b3a;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #367354;
+}
+
+/* BOOK CATALOG */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+}
+
+.card h3 {
+    margin: 10px 0;
+}
+
+.card p,
+.muted {
+    color: #718078;
+    font-size: 13px;
+}
+
+.pill {
+    display: inline-block;
+    background: #eaf4ec;
+    color: #2e6a4e;
+    border-radius: 20px;
+    padding: 5px 9px;
+    font-size: 12px;
+}
+
+.out {
+    background: #fff0ed;
+    color: #ad4938;
+}
+
+.card button {
+    margin-top: 12px;
+    background: #edf3ed;
+    color: #214b3a;
+}
+
+/* FORMS */
+form {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+    align-items: end;
+}
+
+label {
+    font-size: 12px;
+    color: #718078;
+    display: grid;
+    gap: 7px;
+}
+
+form button {
+    height: 43px;
+}
+
+/* TABLE */
+.table {
+    overflow: auto;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    min-width: 580px;
+}
+
+th,
+td {
+    text-align: left;
+    padding: 13px;
+    border-bottom: 1px solid #e7ece6;
+    font-size: 13px;
+}
+
+th {
+    color: #718078;
+    background: #f7f9f6;
+}
+
+/* FOOTER */
+footer {
+    text-align: center;
+    color: #8a978e;
+    font-size: 12px;
+    padding: 25px;
+}
+
+/* NOTIFICATION */
+#toast {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #214b3a;
+    color: white;
+    padding: 14px;
+    border-radius: 9px;
+    opacity: 0;
+    transition: .2s;
+}
+
+#toast.show {
+    opacity: 1;
+}
+
+.danger {
+    background: #fff;
+    color: #a34436;
+    border: 1px solid #e3b9b2;
+    margin-top: 12px;
+}
+
+/* RESPONSIVE DESIGN */
+@media(max-width: 900px) {
+    .stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media(max-width: 650px) {
+    body {
+        display: block;
+    }
+
+    aside {
+        position: relative;
+        width: 100%;
+        height: auto;
+        padding: 15px;
+    }
+
+    aside small {
+        display: none;
+    }
+
+    nav {
+        display: flex;
+        overflow: auto;
+    }
+
+    nav a {
+        white-space: nowrap;
+        padding: 9px;
+    }
+
+    main {
+        margin: 0;
+        width: 100%;
+        padding: 20px 5%;
+    }
+
+    header {
+        display: block;
+    }
+
+    .grid {
+        grid-template-columns: 1fr;
+    }
+
+    form {
+        grid-template-columns: 1fr;
+    }
+
+    .tools {
+        flex-direction: column;
+    }
+}

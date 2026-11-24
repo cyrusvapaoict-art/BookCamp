@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BookCamp Digital BookHub</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+
+    <aside>
+        <h2>📚 BookCamp</h2>
+        <p>Digital BookHub</p>
+
+        <nav>
+            <a href="#dash">Dashboard</a>
+            <a href="#catalog">Catalog</a>
+            <a href="#borrow">Borrow / Return</a>
+            <a href="#history">History</a>
+            <a href="#manage">Add Books</a>
+        </nav>
+
+        <small>Your Gateway to Knowledge,<br>
+        One Page at a Time.</small>
+    </aside>
+
+    <main>
+        <header>
+            <div>
+                <small>BOOK MANAGEMENT SYSTEM</small>
+                <h1>Welcome to BookCamp 👋</h1>
+            </div>
+            <span id="today"></span>
+        </header>
+
+        <!-- DASHBOARD -->
+        <section id="dash">
+            <h2>Dashboard Overview</h2>
+
+            <div class="stats">
+                <article>Total Titles<b id="titles">0</b></article>
+                <article>Total Copies<b id="copies">0</b></article>
+                <article>Available<b id="available">0</b></article>
+                <article>Borrowed<b id="borrowed">0</b></article>
+            </div>
+
+            <div class="panel">
+                <h3>Recent Transactions</h3>
+                <div id="recent"></div>
+            </div>
+        </section>
+
+        <!-- BOOK CATALOG -->
+        <section id="catalog">
+            <h2>Book Catalog</h2>
+
+            <div class="tools">
+                <input id="search"
+                    placeholder="Search title, author, category">
+
+                <select id="filter">
+                    <option>All</option>
+                    <option>Fiction</option>
+                    <option>Education</option>
+                    <option>Science</option>
+                    <option>History</option>
+                    <option>Technology</option>
+                </select>
+            </div>
+
+            <div id="books" class="grid"></div>
+        </section>
+
+        <!-- BORROW AND RETURN -->
+        <section id="borrow">
+            <h2>Borrow / Return Books</h2>
+
+            <div class="panel">
+                <form id="transaction">
+
+                    <label>Borrower name
+                        <input id="name" required
+                            placeholder="Student / borrower name">
+                    </label>
+
+                    <label>Book
+                        <select id="bookSelect"></select>
+                    </label>
+
+                    <label>Action
+                        <select id="action">
+                            <option value="borrow">Borrow</option>
+                            <option value="return">Return</option>
+                        </select>
+                    </label>
+
+                    <button>Save Transaction</button>
+                </form>
+
+                <p class="muted">
+                    Date and time are recorded automatically using your device clock.
+                </p>
+            </div>
+        </section>
+
+        <!-- TRANSACTION HISTORY -->
+        <section id="history">
+            <h2>Transaction History</h2>
+
+            <div class="tools">
+                <input id="histSearch"
+                    placeholder="Search borrower or book">
+
+                <select id="histFilter">
+                    <option>All</option>
+                    <option>Borrowed</option>
+                    <option>Returned</option>
+                </select>
+
+                <button id="export">Export CSV</button>
+            </div>
+
+            <div class="panel table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Borrower</th>
+                            <th>Book</th>
+                            <th>Action</th>
+                            <th>Date</th>
+                            <th>Time</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="rows"></tbody>
+                </table>
+            </div>
+
+            <button class="danger" id="clear">
+                Clear history
+            </button>
+        </section>
+
+        <!-- ADD BOOKS -->
+        <section id="manage">
+            <h2>Add a Book</h2>
+
+            <div class="panel">
+                <form id="add">
+
+                    <label>Title
+                        <input id="title" required>
+                    </label>
+
+                    <label>Author
+                        <input id="author" required>
+                    </label>
+
+                    <label>Category
+                        <select id="category">
+                            <option>Fiction</option>
+                            <option>Education</option>
+                            <option>Science</option>
+                            <option>History</option>
+                            <option>Technology</option>
+                        </select>
+                    </label>
+
+                    <label>Copies
+                        <input id="count" type="number"
+                            min="1" value="1" required>
+                    </label>
+
+                    <button>Add Book</button>
+                </form>
+            </div>
+        </section>
+
+        <footer>
+            © 2026 BookCamp · One Page at a Time.
+        </footer>
+    </main>
+
+    <div id="toast"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
